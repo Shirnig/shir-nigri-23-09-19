@@ -66,7 +66,7 @@ class Search extends React.Component {
                     <input type="text" className="search" value={this.state.search}
                            placeholder={this.getPlaceHolder()}
                            onChange={({target}) => this.onChange(target.value)}/>
-                    {!_.isEmpty(this.state.search) && !_.isEmpty(this.props.cities) ?
+                    {this.isAlpha(this.state.search) && !_.isEmpty(this.props.cities) ?
                         <div className='div-ul'>
                             <ul className='ul'>
                                 {this.props.cities.map((city, idx) =>

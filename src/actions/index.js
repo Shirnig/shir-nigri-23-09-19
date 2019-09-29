@@ -3,7 +3,7 @@ import {ToastsStore} from "react-toasts";
 
 
 export const searchCity = (search) => {
-    return dispatch => axios.get(`//dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&q=${search}`).then(({data}) => {
+    return dispatch => axios.get(`//dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=TuM94JFTjwnQFWm9ZZU72Hv2aDwEutwM&q=${search}`).then(({data}) => {
         dispatch(CitiesData(data))
     }).catch(err => {ToastsStore.error("Something went wrong!")})
 };
@@ -30,12 +30,12 @@ export const getCityData = (cityMetadata) => {
 };
 
 const getCurrentWeather = async (id) => {
-    return await axios.get(`//dataservice.accuweather.com/currentconditions/v1/${id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf`);
+    return await axios.get(`//dataservice.accuweather.com/currentconditions/v1/${id}?apikey=TuM94JFTjwnQFWm9ZZU72Hv2aDwEutwM`);
 };
 
 
 const getForecastWeather = async (id) => {
-    return await axios.get(`//dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=6QVjLvU53tFxcdljRE9f4nqehZhA2buf&metric=true`);
+    return await axios.get(`//dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=TuM94JFTjwnQFWm9ZZU72Hv2aDwEutwM&metric=true`);
 };
 
 export const CityWeatherData = cityData => {

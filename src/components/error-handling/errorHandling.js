@@ -1,5 +1,5 @@
 import React from "react";
-import Alert from "react-bootstrap/Alert";
+import ErrorDiv from "./errorDiv";
 
 
 export default class ErrorHandler extends React.Component {
@@ -14,9 +14,9 @@ export default class ErrorHandler extends React.Component {
 
     render() {
         return this.state.errorOccurred ?
-            <Alert variant={'danger'}>
-                Oops! Something Went Wrong :(
-            </Alert>
+           <ErrorDiv/>
             : this.props.children
     }
 }
+
+
